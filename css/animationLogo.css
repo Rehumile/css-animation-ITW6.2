@@ -1,17 +1,29 @@
  /* The animation code */
-@keyframes animatedSquare {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
-}
+@keyframes MovingLogo {
+  0%   {width: 100px;
+        height: 100px;
+        filter: blur(5px);}
+  20% {width: 200px;
+        height: 200px;
+        filter: opacity(50%)}
+  40% {transform: translateY(-200px);}
+  60% {tranform:translateY(0);}
+  80% {transform: translateY(200px);}
+
+  }
+
 
 /* The element to apply the animation to */
-div {
+ img{
   width: 100px;
   height: 100px;
-  background-color: rgb(98, 0, 255);
-  animation-name: animatedSquare;
-  animation-duration: 4s;
+  margin-left: 550px;
+  margin-top: 200px;
+  animation-duration: 10s;
   animation-iteration-count: infinite;    
 } 
+
+ img:hover {
+   animation-name: MovingLogo;
+  animation-timing-function: ease;
+}
